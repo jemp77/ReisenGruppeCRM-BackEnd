@@ -1,0 +1,28 @@
+﻿CREATE TABLE [dbo].[Contract] (
+    [Id]                     INT           IDENTITY (1, 1) NOT NULL,
+    [ClientId]               INT           NOT NULL,
+    [ContractDate]           DATETIME      NOT NULL,
+    [ContractNumber]         VARCHAR (20)  NOT NULL,
+    [MembershipPrice]        BIGINT        NOT NULL,
+    [EntryPrice]             BIGINT        NOT NULL,
+    [CuiPrice]               BIGINT        NOT NULL,
+    [LendValue]              BIGINT        NULL,
+    [LendInstallments]       SMALLINT      NULL,
+    [LendInstallmentPrice]   BIGINT        NULL,
+    [LendInstallmentDate]    DATE          NULL,
+    [DurationYears]          SMALLINT      NOT NULL,
+    [Observations]           VARCHAR (MAX) NULL,
+    [ContractorSignature]    VARCHAR (MAX) NULL,
+    [CoOwnerSignature]       VARCHAR (MAX) NULL,
+    [Adviser1Signature]      VARCHAR (MAX) NULL,
+    [Adviser2Signature]      VARCHAR (MAX) NULL,
+    [AuthorizationSignature] VARCHAR (MAX) NULL,
+    [DebitCardPayment]       BIGINT        NULL,
+    [CreditCardPayment]      BIGINT        NULL,
+    [TransferPayment]        BIGINT        NULL,
+    [CashPayment]            BIGINT        NULL,
+    [Status]                 VARCHAR (20)  NOT NULL,
+    CONSTRAINT [PK_Contract] PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_Contract_Client] FOREIGN KEY ([ClientId]) REFERENCES [dbo].[Client] ([Id])
+);
+
