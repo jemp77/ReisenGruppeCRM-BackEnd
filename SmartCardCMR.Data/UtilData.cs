@@ -33,7 +33,7 @@ namespace SmartCardCRM.Data
                     _SendEmail.EmailsTo = parameters[0];
                     _SendEmail.Subject = string.Format(_context.ConfigurationSettings.Where(x => x.Key == "WelcomeEmailSubject").FirstOrDefault().Value, parameters[3]);
                     _SendEmail.Body = string.Format(_context.ConfigurationSettings.Where(x => x.Key == "WelcomeEmailBody").FirstOrDefault().Value, parameters[1], parameters[2], parameters[3]);
-                    _SendEmail.Attachments = new List<Attachment> { new Attachment("./Documents/Manual y Carta de Bienvenida.pdf") };
+                    //_SendEmail.Attachments = new List<Attachment> { new Attachment("./Documents/Manual y Carta de Bienvenida.pdf") };
                     new EmailNotifications().SendEmail(_SendEmail);
                     return true;
                 });
