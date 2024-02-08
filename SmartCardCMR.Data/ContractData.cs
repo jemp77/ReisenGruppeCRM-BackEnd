@@ -125,7 +125,7 @@ namespace SmartCardCRM.Data
                         contractNumber = _context.Contract.Where(x => x.ContractNumber == contractDTO.ContractNumber).ToList();
                         if (contractNumber.Count > 0)
                         {
-                            contractDTO.ContractNumber = "BOG" + (int.Parse(contractDTO.ContractNumber.Split("BOG")[1]) + 1).ToString();
+                            contractDTO.ContractNumber = "RG" + (int.Parse(contractDTO.ContractNumber.Split("RG")[1]) + 1).ToString();
                         }
                     }
                     while (contractNumber.Count > 0);

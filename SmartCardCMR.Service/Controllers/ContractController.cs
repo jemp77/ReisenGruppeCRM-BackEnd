@@ -53,7 +53,7 @@ namespace SmartCardCRM.Service.Controllers
             { 
                 data = new 
                 { 
-                    ContractNumber = string.Format("BOG{0}", (int.Parse(ConfigurationSettingsData.GetValue("ConsecutiveContractNumber").Value) + 1).ToString()) 
+                    ContractNumber = string.Format("RG{0}", (int.Parse(ConfigurationSettingsData.GetValue("ConsecutiveContractNumber").Value) + 1).ToString()) 
                 } 
             };
         }
